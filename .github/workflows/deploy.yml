@@ -13,17 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: appleboy/scp-action@v0.1.7
+      - name: Copy app files to EC2
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "app/"
+          source: "app/*"
           target: "/usr/share/nginx/html"
+          strip_components: 1
+          overwrite: true
 
-      - uses: appleboy/ssh-action@v1.0.3
+      - name: Reload nginx
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
