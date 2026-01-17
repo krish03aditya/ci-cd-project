@@ -33,7 +33,7 @@ an AWS EC2 instance without manual server access.
     ├── app/
     │   └── index.html
     ├── terraform/
-    │   ├── provider.tf
+    │   ├── main.tf
     │   ├── ec2.tf
     │   ├── security_group.tf
     │   ├── variables.tf
