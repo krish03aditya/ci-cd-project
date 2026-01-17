@@ -34,8 +34,6 @@ an AWS EC2 instance without manual server access.
     │   └── index.html
     ├── terraform/
     │   ├── main.tf
-    │   ├── ec2.tf
-    │   ├── security_group.tf
     │   ├── variables.tf
     │   ├── outputs.tf
     ├── .github/
