@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CI/CD Deployment Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        text-align: center;
+        padding: 60px;
+      }
+      .card {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 520px;
+        margin: auto;
+      }
+      button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        background: #00d4ff;
+        color: #000;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background: #00aacc;
+      }
+      .status {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>CI/CD Deployment Demo 🚀</h1>
+      <p>This application is automatically deployed using GitHub Actions.</p>
+      <button onclick="showStatus()">Check Deployment Status</button>
+      <div class="status" id="status"></div>
+    </div>
+
+    <script>
+      function showStatus() {
+        const time = new Date().toLocaleString()
+        document.getElementById("status").innerText =
+          "Deployment successful at " + time
+      }
+    </script>
+  </body>
+</html>
